@@ -10,12 +10,6 @@ fn main() {
         stream: TcpStream::connect("localhost:7878").unwrap()
     };
 
-    let mut input = MD5HashCashInput {
-        complexity: 9,
-        message: "hello".to_string(),
-    };
-
-    let seed =
     stream.write(serde_json::to_string(&message::Message::Hello).unwrap()).unwrap();
     println!("{}", stream.read().unwrap());
 

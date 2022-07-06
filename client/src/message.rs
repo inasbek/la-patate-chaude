@@ -32,17 +32,11 @@ pub struct PublicPlayer {
     pub score: i32,
     pub steps: u32,
     pub is_active: bool,
-    pub total_used_time: f64,
-    test: Vec<PublicPlayer>
+    pub total_used_time: f64
 }
 
 //#[derive(Debug, Serialize, Deserialize)]
 // pub struct PublicLeaderBoard {
 //     .O: Vec<PublicPlayer>,
 // }
-
-struct MD5HashCashInput {
-    complexity: u32,
-    message: String,
-}
 
