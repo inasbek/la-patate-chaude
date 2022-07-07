@@ -41,8 +41,14 @@ pub struct PublicPlayer {
 //     .O: Vec<PublicPlayer>,
 // }
 
-struct MD5HashCashInput {
-    complexity: u32,
-    message: String,
+#[derive(Debug, Serialize, Deserialize)]
+pub struct MD5HashCashInput {
+    pub complexity: u32,
+    pub message: String,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
+pub struct MD5HashCashOutput {
+    pub seed: u64,
+    pub hashcode: String,
+}

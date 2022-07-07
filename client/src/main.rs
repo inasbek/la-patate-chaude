@@ -3,6 +3,8 @@ mod message;
 mod challenge;
 
 use std::net::TcpStream;
+use message::{MD5HashCashInput,MD5HashCashOutput};
+
 
 fn main() {
 
@@ -15,7 +17,15 @@ fn main() {
         message: "hello".to_string(),
     };
 
-    let seed =
+    // let string = Alphanumeric.sample_string(&mut rand::thread_rng(), 16);
+    // println!("Random string: {}", string);
+    
+
+    // let digest = md5::compute(b"abcdefghijklmnopqrstuvwxyz");
+    // assert_eq!(format!("{:x}", digest), "c3fcd3d76192e4007dfb496cca67e13b");
+
+
+    
     stream.write(serde_json::to_string(&message::Message::Hello).unwrap()).unwrap();
     println!("{}", stream.read().unwrap());
 
